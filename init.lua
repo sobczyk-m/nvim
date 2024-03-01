@@ -88,7 +88,7 @@ require('lazy').setup({
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim',       opts = {} },
+      { 'j-hui/fidget.nvim', opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
@@ -124,7 +124,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',  opts = {} },
+  { 'folke/which-key.nvim', opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -297,13 +297,14 @@ require('lazy').setup({
   require 'custom.plugins.markdown-preview',
   require 'custom.plugins.indent-blankline',
   require 'custom.plugins.ufo',
-  require("custom.plugins.illuminate"),
-  require("custom.plugins.spectre"),
-  require("custom.plugins.toggleterm"),
-  require("custom.plugins.toggleterm-manager"),
-  require("custom.plugins.tailwindcss-colorizer-cmp"),
-  require("custom.plugins.gp-nvim"),
-  require("custom.plugins.conform")
+  require 'custom.plugins.illuminate',
+  require 'custom.plugins.spectre',
+  require 'custom.plugins.toggleterm',
+  require 'custom.plugins.toggleterm-manager',
+  require 'custom.plugins.tailwindcss-colorizer-cmp',
+  require 'custom.plugins.gp-nvim',
+  require 'custom.plugins.conform',
+  require 'custom.plugins.colorizer',
   -- require("custom.plugins.tokyonight")
   -- Cmp for copilot
   -- require 'custom.plugins.copilot_cmp',
@@ -314,7 +315,7 @@ require('lazy').setup({
 -- NOTE: You can change these options as you wish!
 
 -- numToStr/Comment.nvim configuration
-local ft = require('Comment.ft')
+local ft = require 'Comment.ft'
 -- Add *.templ filetype line and block commenting
 ft.set('templ', { '//%s', '//%s' })
 
@@ -365,7 +366,7 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 
 -- File extension support
-vim.filetype.add({ extension = { templ = "templ" } })
+vim.filetype.add { extension = { templ = 'templ' } }
 
 -- Persist history after closing the buffer
 vim.o.undofile = true
@@ -395,7 +396,7 @@ vim.keymap.set('n', '<leader><F5>', vim.cmd.UndotreeToggle)
 -- Set fold settings
 -- These options were reccommended by nvim-ufo
 -- See: https://github.com/kevinhwang91/nvim-ufo#minimal-configuration
-vim.opt.foldcolumn = "0"
+vim.opt.foldcolumn = '0'
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
@@ -418,12 +419,12 @@ require('telescope').setup {
     mappings = {
       -- Delete buffer keymapping in telescope
       n = {
-        ['<C-d>'] = require('telescope.actions').delete_buffer
+        ['<C-d>'] = require('telescope.actions').delete_buffer,
       },
       i = {
         ['<C-u>'] = false,
         -- Delete buffer keymapping in telescope
-        ['<C-d>'] = require('telescope.actions').delete_buffer
+        ['<C-d>'] = require('telescope.actions').delete_buffer,
       },
     },
   },
@@ -642,7 +643,7 @@ require('which-key').register {
   ['<leader><F5>'] = { name = '[U]ndo tree', _ = 'which_key_ignore' },
   ['<leader>cc'] = { name = '[C]opilot[C]hat', _ = 'which_key_ignore' },
   ['<leader>ch'] = { name = '[C]lear search [H]ighlight', _ = 'which_key_ignore' },
-  ['<leader>o'] = { name = '[O]penAI', _ = 'which_key_ignore' }
+  ['<leader>o'] = { name = '[O]penAI', _ = 'which_key_ignore' },
 }
 -- register which-key VISUAL mode
 -- required for visual <leader>hs (hunk stage) to work
@@ -651,8 +652,8 @@ require('which-key').register({
   ['<leader>h'] = { 'Git [H]unk' },
   ['<leader>S'] = { '[S]pectre' },
   ['<leader>c'] = { '[C]ode' },
-  ["<leader>cc"] = { 'Github [C]opilot [C]hat' },
-  ['<leader>o'] = { name = '[O]penAI', _ = 'which_key_ignore' }
+  ['<leader>cc'] = { 'Github [C]opilot [C]hat' },
+  ['<leader>o'] = { name = '[O]penAI', _ = 'which_key_ignore' },
 }, { mode = 'v' })
 
 -- mason-lspconfig requires that these setup functions are called in this order
@@ -765,7 +766,7 @@ cmp.setup {
   },
   ---@diagnostic disable-next-line: missing-fields
   formatting = {
-    format = require("tailwindcss-colorizer-cmp").formatter
+    format = require('tailwindcss-colorizer-cmp').formatter,
   },
 }
 
