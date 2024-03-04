@@ -305,6 +305,7 @@ require('lazy').setup({
   require 'custom.plugins.gp-nvim',
   require 'custom.plugins.conform',
   require 'custom.plugins.colorizer',
+  require 'custom.plugins.todo-comments',
   -- require("custom.plugins.tokyonight")
   -- Cmp for copilot
   -- require 'custom.plugins.copilot_cmp',
