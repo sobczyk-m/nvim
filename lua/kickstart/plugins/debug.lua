@@ -51,6 +51,7 @@ return {
     vim.keymap.set('n', '<leader>B', function()
       dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
     end, { desc = 'Debug: Set Breakpoint' })
+    vim.api.nvim_set_keymap('n', '<F12>', ":lua require('dapui').open({reset = true})<CR>", {})
 
     -- Dap UI setup
     -- For more information, see |:help nvim-dap-ui|

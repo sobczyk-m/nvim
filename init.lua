@@ -306,6 +306,7 @@ require('lazy').setup({
   require 'custom.plugins.conform',
   require 'custom.plugins.colorizer',
   require 'custom.plugins.todo-comments',
+  require 'custom.plugins.dap-virtual-text',
   -- require("custom.plugins.tokyonight")
   -- Cmp for copilot
   -- require 'custom.plugins.copilot_cmp',
@@ -384,6 +385,9 @@ vim.api.nvim_set_keymap('n', '<Leader>ch', ':noh<CR>', { noremap = true, silent 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
+-- Open current buffer in new tab
+vim.api.nvim_set_keymap('n', '<leader>ts', ':tabedit %<CR>', { desc = 'Open current buffer in new tab', noremap = true, silent = true })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
