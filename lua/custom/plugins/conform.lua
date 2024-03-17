@@ -1,10 +1,11 @@
 return {
   'stevearc/conform.nvim',
   config = function()
-    require("conform").setup({
+    require('conform').setup {
       formatters_by_ft = {
-        lua = { "stylua" },
-        templ = { "templ" },
+        lua = { 'stylua' },
+        templ = { 'templ' },
+        go = { 'goimports', 'gofumpt' },
       },
       format_on_save = {
         -- These options will be passed to conform.format()
@@ -12,19 +13,19 @@ return {
         lsp_fallback = true,
       },
 
-      vim.keymap.set({ "n" }, "<leader>cf", function()
-        require("conform").format({
+      vim.keymap.set({ 'n' }, '<leader>cf', function()
+        require('conform').format {
           lsp_fallback = true,
           timeout_ms = 500,
-        })
-      end, { desc = "[F]ormat code in file" }),
+        }
+      end, { desc = '[F]ormat code in file' }),
 
-      vim.keymap.set({ "v", }, "<leader>cf", function()
-        require("conform").format({
+      vim.keymap.set({ 'v' }, '<leader>cf', function()
+        require('conform').format {
           lsp_fallback = true,
           timeout_ms = 500,
-        })
-      end, { desc = "[F]ormat code in range" })
-    })
-  end
+        }
+      end, { desc = '[F]ormat code in range' }),
+    }
+  end,
 }
