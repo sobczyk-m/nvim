@@ -17,6 +17,7 @@ return {
         'javascript',
         'json',
         'java',
+        'kotlin',
         'lua',
         'markdown',
         'python',
