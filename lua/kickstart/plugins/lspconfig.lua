@@ -151,6 +151,7 @@ return {
         html = {},
         htmx = {},
         jsonls = {},
+        jdtls = {},
         lua_ls = {
           -- cmd = {...},
           -- filetypes { ...},

@@ -16,6 +16,7 @@ return {
         'html',
         'javascript',
         'json',
+        'java',
         'lua',
         'markdown',
         'python',
