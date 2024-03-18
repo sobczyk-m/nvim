@@ -1,34 +1,30 @@
--- Tokyonight
+-- nightfox
 return {
-  'folke/tokyonight.nvim',
+  'EdenEast/nightfox.nvim',
   lazy = false,
   priority = 1000,
   config = function()
-    require('tokyonight').setup {
-      options = {
-        -- ... your lualine config
-        theme = 'tokyonight',
-        -- ... your lualine config
-      },
-    }
-    -- colorscheme tokyonight, tokyonight-night, tokyonight-storm, tokyonight-day ,tokyonight-moon
-    vim.cmd [[colorscheme tokyonight]]
-    -- You can configure highlights by doing something like
-    -- vim.cmd.hi 'Comment gui=none'
+    require('nightfox').setup {}
+    -- colorscheme nightfox, duskfox, terafox, carbonfox, nordfox
+    vim.cmd 'colorscheme duskfox'
   end,
 }
 
--- Onedark
+-- - Rose Pine
 -- return {
---   'navarasu/onedark.nvim',
+--   'rose-pine/neovim',
+--   name = 'rose-pine',
 --   lazy = false,
 --   priority = 1000,
 --   config = function()
---     require('onedark').setup {
---       -- Set a style preset. 'dark' is default.
---       style = 'deep', -- dark, darker, cool, deep, warm, warmer, light
+--     require('rose-pine').setup {
+--       styles = {
+--         bold = false,
+--         -- italic = false,
+--       },
 --     }
---     require('onedark').load()
+--     -- colorscheme rose-pine rose-pine-moon rose-pine-dawn
+--     vim.cmd 'colorscheme rose-pine-moon'
 --   end,
 -- }
 
@@ -59,7 +55,55 @@ return {
 --       },
 --     }
 --
---     -- catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
---     vim.cmd.colorscheme 'catppuccin-macchiato'
+--     -- catppuccin-frappe, catppuccin-mocha, catppuccin-macchiato, catppuccin-latte,
+--     vim.cmd.colorscheme 'catppuccin-frappe'
+--   end,
+-- }
+
+-- Onedark
+-- return {
+--   'navarasu/onedark.nvim',
+--   lazy = false,
+--   priority = 1000,
+--   config = function()
+--     require('onedark').setup {
+--       -- Set a style preset. 'dark' is default.
+--       style = 'cool', -- dark, darker, cool, deep, warm, warmer, light
+--     }
+--     require('onedark').load()
+--   end,
+-- }
+
+-- Kanagawa
+-- return {
+--   'rebelot/kanagawa.nvim',
+--   lazy = false,
+--   priority = 1000,
+--   config = function()
+--     require('kanagawa').setup {
+--       -- variant = 'auto', -- auto, main, moon, or dawn
+--     }
+--     -- colorscheme kanagawa-wave kanagawa-dragon kanagawa-lotus
+--     vim.cmd 'colorscheme kanagawa-wave'
+--   end,
+-- }
+
+-- Tokyonight
+-- return {
+--   'folke/tokyonight.nvim',
+--   lazy = false,
+--   priority = 1000,
+--   config = function()
+--     require('tokyonight').setup {
+--       options = {
+--         -- ... your lualine config
+--         theme = 'tokyonight',
+--         -- ... your lualine config
+--       },
+--     }
+--     -- colorscheme tokyonight, tokyonight-night, tokyonight-storm, tokyonight-day ,tokyonight-moon
+--     vim.cmd [[colorscheme tokyonight-storm]]
+--     -- You can configure highlights by doing something like
+--     -- vim.cmd.hi 'Comment gui=none'
 --   end,
 -- }
