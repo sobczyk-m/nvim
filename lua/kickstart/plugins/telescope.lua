@@ -9,7 +9,11 @@ return {
   { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
     event = 'VimEnter',
-    branch = '0.1.x',
+    -- the most stable branch
+    -- commented out beacuase of missing mappings for horizontal scrolling
+    -- return to this after the fix is merged to that branch (feat: #2437)[https://github.com/nvim-telescope/telescope.nvim/pull/2437] or (fix #2787)[https://github.com/nvim-telescope/telescope.nvim/pull/2787]
+    -- (releases)[https://github.com/nvim-telescope/telescope.nvim/releases]
+    -- branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
       { -- If encountering errors, see telescope-fzf-native README for install instructions
@@ -60,17 +64,23 @@ return {
           mappings = {
             n = {
               ['<C-x>'] = require('telescope.actions').delete_buffer,
-              ['<C-n>'] = false,
-              ['<C-p>'] = false,
               ['<C-j>'] = require('telescope.actions').move_selection_next,
               ['<C-k>'] = require('telescope.actions').move_selection_previous,
+              ['<C-f>'] = false,
+              ['<C-p>'] = require('telescope.actions').preview_scrolling_left,
+              ['<C-n>'] = require('telescope.actions').preview_scrolling_right,
+              ['<C-h>'] = require('telescope.actions').results_scrolling_left,
+              ['<C-l>'] = require('telescope.actions').results_scrolling_right,
             },
             i = {
               ['<C-x>'] = require('telescope.actions').delete_buffer,
-              ['<C-n>'] = false,
-              ['<C-p>'] = false,
               ['<C-j>'] = require('telescope.actions').move_selection_next,
               ['<C-k>'] = require('telescope.actions').move_selection_previous,
+              ['<C-f>'] = false,
+              ['<C-p>'] = require('telescope.actions').preview_scrolling_left,
+              ['<C-n>'] = require('telescope.actions').preview_scrolling_right,
+              ['<C-h>'] = require('telescope.actions').results_scrolling_left,
+              ['<C-l>'] = require('telescope.actions').results_scrolling_right,
             },
             --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
           },
