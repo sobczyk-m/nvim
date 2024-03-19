@@ -59,14 +59,23 @@ return {
         defaults = {
           mappings = {
             n = {
-              ['<C-d>'] = require('telescope.actions').delete_buffer,
+              ['<C-x>'] = require('telescope.actions').delete_buffer,
+              ['<C-n>'] = false,
+              ['<C-p>'] = false,
+              ['<C-j>'] = require('telescope.actions').move_selection_next,
+              ['<C-k>'] = require('telescope.actions').move_selection_previous,
             },
             i = {
-              ['<C-u>'] = false,
-              -- Delete buffer keymapping in telescope
-              ['<C-d>'] = require('telescope.actions').delete_buffer,
+              ['<C-x>'] = require('telescope.actions').delete_buffer,
+              ['<C-n>'] = false,
+              ['<C-p>'] = false,
+              ['<C-j>'] = require('telescope.actions').move_selection_next,
+              ['<C-k>'] = require('telescope.actions').move_selection_previous,
             },
             --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
+          },
+          layout_config = {
+            scroll_speed = 4,
           },
         },
         pickers = {
