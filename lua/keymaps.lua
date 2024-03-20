@@ -51,4 +51,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Map MaximizerToggle (szw/vim-maximizer) to leader-m
+vim.keymap.set('n', '<leader>m', ':MaximizerToggle<cr>', { desc = 'Maximze current window' })
+-- disable default mappings for maximizer
+vim.g.maximizer_set_default_mapping = 0
+vim.g.maximizer_set_mapping_with_bang = 0
+
 -- vim: ts=2 sts=2 sw=2 et
