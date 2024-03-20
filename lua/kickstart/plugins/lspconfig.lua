@@ -95,6 +95,12 @@ return {
           --  See `:help K` for why this keymap
           map('K', vim.lsp.buf.hover, 'Hover Documentation')
 
+          -- Opens a popup that displays signature information about the symbol under your cursor
+          --  See `:help K` for why this keymap
+          map('<D-p>', vim.lsp.buf.signature_help, 'Hover Signature')
+          -- The same for insert mode
+          vim.keymap.set('i', '<D-p>', vim.lsp.buf.signature_help, { buffer = event.buf, desc = 'LSP: Hover Signature' })
+
           -- WARN: This is not Goto Definition, this is Goto Declaration.
           --  For example, in C this would take you to the header
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
