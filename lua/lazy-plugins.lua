@@ -78,6 +78,7 @@ require('lazy').setup({
   require 'custom.plugins.todo-comments',
   require 'custom.plugins.ufo',
   require 'custom.plugins.undotree',
+  require 'custom.plugins.wtf-nvim',
 }, {
   ui = {
     -- If you have a Nerd Font, set icons to an empty table which will use the
