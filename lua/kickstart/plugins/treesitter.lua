@@ -19,6 +19,7 @@ return {
         'java',
         'kotlin',
         'lua',
+        'luadoc',
         'markdown',
         'python',
         'tsx',
