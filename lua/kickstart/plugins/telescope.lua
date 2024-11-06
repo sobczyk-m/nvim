@@ -85,6 +85,9 @@ return {
             --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
           },
           layout_config = {
+            horizontal = {
+              preview_cutoff = 0,
+            },
             scroll_speed = 4,
           },
         },
@@ -93,6 +96,9 @@ return {
           sort_lastused = true,
           -- ignore current buffer in list
           ignore_current_buffer = true,
+          colorscheme = {
+            enable_preview = true,
+          },
         },
         extensions = {
           ['ui-select'] = {

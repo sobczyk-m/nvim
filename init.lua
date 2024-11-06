@@ -105,6 +105,12 @@ require 'lazy-bootstrap'
 -- [[ Configure and install plugins ]]
 require 'lazy-plugins'
 
+local colorscheme = 'github_dark_dimmed'
+local ok, _ = pcall(vim.api.nvim_command, 'colorscheme ' .. colorscheme)
+if not ok then
+  print('error setting colorscheme ' .. colorscheme)
+end
+
 -- numToStr/Comment.nvim configuration
 local ft = require 'Comment.ft'
 -- Add *.templ filetype line and block commenting

@@ -57,8 +57,8 @@ require('lazy').setup({
   -- Cmp for copilot
   -- require 'custom.plugins.copilot_cmp',
   require 'custom.plugins.conform',
+  { import = 'custom.plugins.colors' },
   require 'custom.plugins.colorizer',
-  require 'custom.plugins.color-scheme',
   require 'custom.plugins.dap-virtual-text',
   require 'custom.plugins.gp-nvim',
   require 'custom.plugins.harpoon',
