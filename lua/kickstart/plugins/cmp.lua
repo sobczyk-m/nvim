@@ -123,7 +123,15 @@ return {
             end
           end, { 'i', 's' }),
         },
+
+        -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
+        --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
         sources = {
+          {
+            name = 'lazydev',
+            -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
+            group_index = 0,
+          },
           { name = 'nvim_lsp' },
           { name = 'luasnip' }, -- snippets
           -- { name = 'buffer', max_item_count = 5 }, -- text within current buffer
