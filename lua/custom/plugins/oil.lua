@@ -32,6 +32,8 @@ return {
           ['gx'] = 'actions.open_external',
           ['g.'] = 'actions.toggle_hidden',
           ['g\\'] = 'actions.toggle_trash',
+          ['<C-u>'] = 'actions.preview_scroll_up',
+          ['<C-d>'] = 'actions.preview_scroll_down',
         },
         view_options = {
           show_hidden = true,
