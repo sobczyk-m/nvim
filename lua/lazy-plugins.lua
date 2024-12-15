@@ -67,7 +67,6 @@ require('lazy').setup({
   require 'custom.plugins.harpoon',
   require 'custom.plugins.illuminate',
   require 'custom.plugins.indent-blankline',
-  require 'custom.plugins.nvim-java',
   require 'custom.plugins.lualine',
   require 'custom.plugins.markdown-preview',
   require 'custom.plugins.neotree',
