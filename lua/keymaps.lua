@@ -6,10 +6,10 @@ vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Diagnostic: Go to previous message' })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Diagnostic: Go to next message' })
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Diagnostic: Show Error messages' })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Diagnostic: Open Quickfix list' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -52,7 +52,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Map MaximizerToggle (szw/vim-maximizer) to leader-m
-vim.keymap.set('n', '<leader>m', ':MaximizerToggle<cr>', { desc = 'Maximze current window' })
+vim.keymap.set('n', '<leader>m', ':MaximizerToggle<cr>', { desc = 'Maximizer: Maximize current window' })
 -- disable default mappings for maximizer
 vim.g.maximizer_set_default_mapping = 0
 vim.g.maximizer_set_mapping_with_bang = 0

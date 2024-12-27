@@ -18,14 +18,14 @@ return {
           lsp_fallback = true,
           timeout_ms = 500,
         }
-      end, { desc = '[F]ormat code in file' }),
+      end, { desc = 'Code: Format in file' }),
 
       vim.keymap.set({ 'v' }, '<leader>cf', function()
         require('conform').format {
           lsp_fallback = true,
           timeout_ms = 500,
         }
-      end, { desc = '[F]ormat code in range' }),
+      end, { desc = 'Code: Format in range' }),
     }
   end,
 }

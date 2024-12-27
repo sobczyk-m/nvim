@@ -34,21 +34,21 @@ return {
 
     return {
       -- Harpoon marked files 1 through 4
-      { "<C-1>", function() harpoon:list():select(1) end,                     desc = "Harpoon buffer 1" },
-      { "<C-2>", function() harpoon:list():select(2) end,                     desc = "Harpoon buffer 2" },
-      { "<C-3>", function() harpoon:list():select(3) end,                     desc = "Harpoon buffer 3" },
-      { "<C-4>", function() harpoon:list():select(4) end,                     desc = "Harpoon buffer 4" },
+      { "<C-1>", function() harpoon:list():select(1) end,                     desc = "Harpoon: buffer 1" },
+      { "<C-2>", function() harpoon:list():select(2) end,                     desc = "Harpoon: buffer 2" },
+      { "<C-3>", function() harpoon:list():select(3) end,                     desc = "Harpoon: buffer 3" },
+      { "<C-4>", function() harpoon:list():select(4) end,                     desc = "Harpoon: buffer 4" },
 
       -- Harpoon next and previous.
-      { "<C-5>", function() harpoon:list():prev() end,                        desc = "Harpoon prev buffer" },
-      { "<C-6>", function() harpoon:list():next() end,                        desc = "Harpoon next buffer" },
+      { "<C-5>", function() harpoon:list():prev() end,                        desc = "Harpoon: prev buffer" },
+      { "<C-6>", function() harpoon:list():next() end,                        desc = "Harpoon: next buffer" },
 
       -- Harpoon user interface.
-      { "<C-7>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc = "Harpoon Toggle Menu" },
-      { "<C-8>", function() harpoon:list():append() end,                      desc = "Harpoon add file" },
+      { "<C-7>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc = "Harpoon: Toggle Menu" },
+      { "<C-8>", function() harpoon:list():append() end,                      desc = "Harpoon: add file" },
 
       -- Use Telescope as Harpoon user interface.
-      { "<C-9>", function() toggle_telescope(harpoon:list()) end,             desc = "Open Harpoon window" },
+      { "<C-9>", function() toggle_telescope(harpoon:list()) end,             desc = "Harpoon: Open window" },
     }
   end,
 

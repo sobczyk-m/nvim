@@ -82,6 +82,7 @@ require('lazy').setup({
   require 'custom.plugins.undotree',
   require 'custom.plugins.wtf-nvim',
   require 'custom.plugins.vim-maximizer',
+  require 'custom.plugins.cppman',
 }, {
   ui = {
     -- If you have a Nerd Font, set icons to an empty table which will use the
