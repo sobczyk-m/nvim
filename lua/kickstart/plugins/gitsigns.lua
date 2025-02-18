@@ -1,6 +1,15 @@
--- Here is a more advanced example where we pass configuration
--- options to `gitsigns.nvim`. This is equivalent to the following lua:
---    require('gitsigns').setup({ ... })
+-- Alternatively, use `config = function() ... end` for full control over the configuration.
+-- If you prefer to call `setup` explicitly, use:
+--    {
+--        'lewis6991/gitsigns.nvim',
+--        config = function()
+--            require('gitsigns').setup({
+--                -- Your gitsigns configuration here
+--            })
+--        end,
+--    }
+--- Here is a more advanced example where we pass configuration
+-- options to `gitsigns.nvim`.
 --
 -- See `:help gitsigns` to understand what the configuration keys do
 return {
@@ -56,7 +65,7 @@ return {
         map('n', '<leader>hs', gs.stage_hunk, { desc = 'Git: Stage hunk' })
         map('n', '<leader>hr', gs.reset_hunk, { desc = 'Git: Reset hunk' })
         map('n', '<leader>hS', gs.stage_buffer, { desc = 'Git: Stage buffer' })
-        map('n', '<leader>hu', gs.undo_stage_hunk, { desc = 'Git: Undo stage hunk' })
+        map('n', '<leader>hu', gs.stage_hunk, { desc = 'Git: Undo stage hunk' })
         map('n', '<leader>hR', gs.reset_buffer, { desc = 'Git: Reset buffer' })
         map('n', '<leader>hp', gs.preview_hunk, { desc = 'Git: Preview git hunk' })
         map('n', '<leader>hb', function()
@@ -69,7 +78,7 @@ return {
 
         -- Toggles
         map('n', '<leader>tb', gs.toggle_current_line_blame, { desc = 'Git: toggle git blame line' })
-        map('n', '<leader>td', gs.toggle_deleted, { desc = 'Git: toggle git show deleted' })
+        map('n', '<leader>td', gs.preview_hunk_inline, { desc = 'Git: toggle git show deleted' })
 
         -- Text object
         map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>', { desc = 'Git: select git hunk' })
