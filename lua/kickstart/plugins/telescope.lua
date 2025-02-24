@@ -145,6 +145,13 @@ return {
         }
       end, { desc = 'Telescope: Search in Open Files' })
 
+      -- Switch neovim themes with telescope picker
+      vim.keymap.set('n', '<leader>T', function()
+        builtin.colorscheme {
+          enable_preview = true,
+        }
+      end, { desc = 'Telescope: Swith neovim theme' })
+
       -- Shortcut for searching your neovim configuration files
       vim.keymap.set('n', '<leader>sn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
