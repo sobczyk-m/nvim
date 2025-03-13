@@ -35,6 +35,7 @@ return {
       --  into multiple repos for maintenance purposes.
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
+      'hrsh7th/cmp-nvim-lsp-signature-help',
       -- 'hrsh7th/cmp-buffer',
     },
     config = function()
@@ -136,6 +137,7 @@ return {
           { name = 'luasnip' }, -- snippets
           -- { name = 'buffer', max_item_count = 5 }, -- text within current buffer
           { name = 'path' }, -- file system paths
+          { name = 'nvim_lsp_signature_help' },
           -- Copilot Source
           -- { name = "copilot", group_index = 2 },
         },
