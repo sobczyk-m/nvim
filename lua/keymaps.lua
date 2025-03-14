@@ -34,6 +34,11 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+vim.keymap.set('n', '<C-S-h>', [[<cmd>vertical resize -5<cr>]], { desc = 'Make the window smaller vertically' })
+vim.keymap.set('n', '<C-S-l>', [[<cmd>vertical resize +5<cr>]], { desc = 'Make the window biger vertically' })
+vim.keymap.set('n', '<C-S-j>', [[<cmd>horizontal resize -2<cr>]], { desc = 'Make the window smaller horizontally' })
+vim.keymap.set('n', '<C-S-k>', [[<cmd>horizontal resize +2<cr>]], { desc = 'Make the window bigger horizontally' })
+
 -- Open current buffer in new tab
 vim.api.nvim_set_keymap('n', '<leader>ts', ':tabedit %<CR>', { desc = 'Open current buffer in new tab', noremap = true, silent = true })
 
