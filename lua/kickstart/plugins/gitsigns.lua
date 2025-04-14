@@ -24,7 +24,7 @@ return {
         changedelete = { text = '~' },
       },
       on_attach = function(bufnr)
-        local gs = package.loaded.gitsigns
+        local gitsigns = require 'gitsigns'
 
         local function map(mode, l, r, opts)
           opts = opts or {}
@@ -32,56 +32,50 @@ return {
           vim.keymap.set(mode, l, r, opts)
         end
 
-        -- Navigation
+        -- Navigationsa
         map({ 'n', 'v' }, ']c', function()
           if vim.wo.diff then
-            return ']c'
+            vim.cmd.normal { ']c', bang = true }
+          else
+            gitsigns.nav_hunk 'next'
           end
-          vim.schedule(function()
-            gs.next_hunk()
-          end)
-          return '<Ignore>'
-        end, { expr = true, desc = 'Git: Jump to next hunk' })
+        end, { desc = 'Git: Jump to next hunk' })
 
         map({ 'n', 'v' }, '[c', function()
           if vim.wo.diff then
-            return '[c'
+            vim.cmd.normal { '[c', bang = true }
+          else
+            gitsigns.nav_hunk 'prev'
           end
-          vim.schedule(function()
-            gs.prev_hunk()
-          end)
-          return '<Ignore>'
-        end, { expr = true, desc = 'Git: Jump to previous hunk' })
+        end, { desc = 'Git: Jump to previous hunk' })
 
         -- Actions
         -- visual mode
         map('v', '<leader>hs', function()
-          gs.stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
-        end, { desc = 'stage git hunk' })
+          gitsigns.stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
+        end, { desc = 'Git: Stage hunk' })
         map('v', '<leader>hr', function()
-          gs.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
-        end, { desc = 'reset git hunk' })
+          gitsigns.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
+        end, { desc = 'Git: Reset hunk' })
         -- normal mode
-        map('n', '<leader>hs', gs.stage_hunk, { desc = 'Git: Stage hunk' })
-        map('n', '<leader>hr', gs.reset_hunk, { desc = 'Git: Reset hunk' })
-        map('n', '<leader>hS', gs.stage_buffer, { desc = 'Git: Stage buffer' })
-        map('n', '<leader>hu', gs.stage_hunk, { desc = 'Git: Undo stage hunk' })
-        map('n', '<leader>hR', gs.reset_buffer, { desc = 'Git: Reset buffer' })
-        map('n', '<leader>hp', gs.preview_hunk, { desc = 'Git: Preview git hunk' })
-        map('n', '<leader>hb', function()
-          gs.blame_line { full = false }
-        end, { desc = 'git blame line' })
-        map('n', '<leader>hd', gs.diffthis, { desc = 'Git: Diff against index' })
+        map('n', '<leader>hs', gitsigns.stage_hunk, { desc = 'Git: Stage hunk' })
+        map('n', '<leader>hr', gitsigns.reset_hunk, { desc = 'Git: Reset hunk' })
+        map('n', '<leader>hS', gitsigns.stage_buffer, { desc = 'Git: Stage buffer' })
+        map('n', '<leader>hu', gitsigns.stage_hunk, { desc = 'Git: Undo stage hunk' })
+        map('n', '<leader>hR', gitsigns.reset_buffer, { desc = 'Git: Reset buffer' })
+        map('n', '<leader>hp', gitsigns.preview_hunk, { desc = 'Git: Preview git hunk' })
+        map('n', '<leader>hb', gitsigns.blame_line, { desc = 'Git: Blame line' })
+        map('n', '<leader>hd', gitsigns.diffthis, { desc = 'Git: Diff against index' })
         map('n', '<leader>hD', function()
-          gs.diffthis '~'
+          gitsigns.diffthis '@'
         end, { desc = 'Git: diff against last commit' })
 
         -- Toggles
-        map('n', '<leader>tb', gs.toggle_current_line_blame, { desc = 'Git: toggle git blame line' })
-        map('n', '<leader>td', gs.preview_hunk_inline, { desc = 'Git: toggle git show deleted' })
+        map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = 'Git: Toggle git blame line' })
+        map('n', '<leader>td', gitsigns.preview_hunk_inline, { desc = 'Git: Toggle git show deleted' })
 
         -- Text object
-        map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>', { desc = 'Git: select git hunk' })
+        map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>', { desc = 'Git: Select git hunk' })
       end,
     },
   },

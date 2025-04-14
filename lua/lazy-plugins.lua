@@ -83,6 +83,9 @@ require('lazy').setup({
   require 'custom.plugins.vim-maximizer',
   require 'custom.plugins.cppman',
   require 'custom.plugins.roslyn',
+  require 'custom.plugins.diffview',
+  require 'custom.plugins.neogit',
+  require 'custom.plugins.git-conflict-nvim',
 }, {
   ui = {
     -- If you have a Nerd Font, set icons to an empty table which will use the
